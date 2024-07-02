@@ -5,5 +5,6 @@ export interface FormData {
     phone: string;
     address: string;
     urlImage: string | null;
+    subscribe: boolean;
   }
   
