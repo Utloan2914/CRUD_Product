@@ -7,7 +7,7 @@ import Stack from '@mui/material/Stack';
 import { Menu, MenuItem, IconButton } from '@mui/material';
 import Link from 'next/link';
 import Logout from '@/app/logout/page';
-import Product from '../productAPI/page';
+import Product from '@/app/productAPI/page';
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
     backgroundColor: '#44b700',
@@ -81,19 +81,27 @@ const BadgeAvatars: React.FC<BadgeAvatarsProps> = ({ imageUrl }) => {
         </StyledBadge>
       </IconButton>
       <Menu
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      >
+  anchorEl={anchorEl}
+  open={open}
+  onClose={handleClose}
+  anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+  transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+  PaperProps={{
+    style: {
+      width: '180px',
+    },
+  }}
+>
+
         <Link href="/viewProfile" passHref> 
           <MenuItem onClick={handleClose}>View Profile</MenuItem>
         </Link>
         <Link href="/editProfile" passHref> 
           <MenuItem onClick={handleClose}>Edit Profile</MenuItem>
         </Link>
-       
+        <Link href="/productAPI" passHref> 
+          <MenuItem onClick={handleClose}>Back to home page</MenuItem>
+        </Link>
         <Logout />
       </Menu>
     </Stack>

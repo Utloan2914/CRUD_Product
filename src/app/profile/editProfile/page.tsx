@@ -1,9 +1,14 @@
 import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import { Card, CardBody, CardImg, Button, Container, Row, Col, Input, Alert } from 'reactstrap';
 import { useRouter } from 'next/navigation';
-import { FormData } from '@/app/profile/types/page';
-import EditProfileProps from '@/app/profile/editProfileProps/page';
+import { FormData } from '../../component/formData/page';
 import defaultImage from 'public/images/default-image.png';
+
+interface EditProfileProps {
+  formDataProp: FormData;
+  onUpdateProfile: (updatedData: FormData) => void;
+}
+
 const EditProfile: React.FC<EditProfileProps> = ({ formDataProp, onUpdateProfile }) => {
   const [formData, setFormData] = useState<FormData | null>(formDataProp);
   const [error, setError] = useState('');

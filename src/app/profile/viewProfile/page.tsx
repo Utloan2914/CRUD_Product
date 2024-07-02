@@ -4,19 +4,12 @@ import { Container, Row, Col, Card, CardBody, ListGroup, ListGroupItem } from 'r
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
 import Avatar from '@mui/material/Avatar';
+import { FormData } from '../../component/formData/page';
 
-interface FormData {
-    name: string;
-    email: string;
-    password: string;
-    repeatPassword: string;
-    phone: string;
-    address: string;
-    subscribe: boolean;
-    urlImage: string | null;
+interface ViewProfileProps {
+    formData: FormData; 
 }
-
-const ViewProfile: React.FC = () => {
+const ViewProfile: React.FC<ViewProfileProps> = ({ formData }) => {
     const [user, setUser] = useState<FormData | null>(null);
 
     useEffect(() => {

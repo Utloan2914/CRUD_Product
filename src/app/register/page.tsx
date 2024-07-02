@@ -4,17 +4,7 @@ import { Button, Container, Row, Col, Card, CardBody, CardImg, Input, Alert } fr
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-
-interface FormData {
-    name: string;
-    email: string;
-    password: string;
-    repeatPassword: string;
-    phone: string;
-    address: string;
-    subscribe: boolean;
-    urlImage: string | null;
-}
+import { FormData } from '../component/formData/page';
 
 const Register: React.FC = () => {
     const [formData, setFormData] = useState<FormData>({

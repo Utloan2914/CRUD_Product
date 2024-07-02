@@ -48,6 +48,7 @@ const WelcomeText = styled('div')({
 });
 
 const Navbar = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [userEmail, setUserEmail] = useState<string | null>(null);
   const [userImage, setUserImage] = useState<string | null>(null);
 
@@ -56,6 +57,7 @@ const Navbar = () => {
     if (formData) {
       const parsedData = JSON.parse(formData);
       setUserEmail(parsedData.email);
+      setIsLoggedIn(true);
     }
 
     const storedImageUrl = localStorage.getItem('urlImage');

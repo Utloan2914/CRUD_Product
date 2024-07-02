@@ -9,7 +9,7 @@ import Register from '../../register/page';
 import ViewProfile from '@/app/profile/viewProfile/page';
 import EditProfile from '@/app/profile/editProfile/page';
 import { usePathname } from 'next/navigation';
-import { FormData } from '@/app/profile/types/page';
+import { FormData } from '../formData/page';
 interface LayoutProps {
   children: ReactNode;
 }
@@ -20,6 +20,7 @@ const Layout = ({ children }: LayoutProps) => {
     name: '',
     email: '',
     password: '',
+    repeatPassword: '',
     phone: '',
     address: '',
     subscribe: false,
@@ -54,3 +55,5 @@ const Layout = ({ children }: LayoutProps) => {
 };
 
 export default Layout;
+
+
